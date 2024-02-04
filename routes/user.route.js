@@ -1,12 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const UserRouter = express.Router();
 const ProductModel = require('../models/product.model');
 const UserModel = require('../models/user.model');
 const verifyToken = require('../validation/tokenValidation');
 const stripe = require('stripe'); // STRIPE for payment
-const secretKey =
-  'sk_test_51NewRxFhcIRDjc4CHlC1h7Jzx8NHQK0ZMxeM6T9eu2uhjpX1eLdmmgAdnlND0ZZSSh6Bz4aoxSZ5kV6IUWteLXN700yXkqcdi3';
-const stripeObj = stripe(secretKey);
+const stripeObj = stripe(process.env.USER_SECRET_KEY);
 
 UserRouter.get('/products/:userId', verifyToken, (req, res) => {
   const { userId } = req.params;

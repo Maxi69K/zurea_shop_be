@@ -1,5 +1,5 @@
 const createProductValidationMdw = (req, res, next) => {
-  console.log(req?.body);
+  // console.log(req?.body);
   res?.send('mdw');
 };
 

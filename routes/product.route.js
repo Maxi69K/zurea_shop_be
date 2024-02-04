@@ -92,7 +92,7 @@ productRoute.post(
     next();
   },
   async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     try {
       const newProduct = await ProductModel.create(req.body);
       newProduct.save();

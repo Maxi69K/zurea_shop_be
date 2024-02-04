@@ -1,7 +1,8 @@
+require('dotenv').config();
 const htmlContactForm = (message) => {
   return `<h2 style="font-size: 20px; color: darkred;">Message from ZureaShop</h2>
     <p style="line-height: 1.7; color: blue">${message}</p>
-    <a href="http://localhost:3000" target="_blank">Go to WebSite</a>
+    <a href="${process.env.MAIL_TEMPLATE_URL}" target="_blank">Go to WebSite</a>
     <img src="cid:logo@nodemailer.com" style="height: 50px" alt="">`;
 };
 
